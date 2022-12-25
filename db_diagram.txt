@@ -1,0 +1,21 @@
+table Books{
+  id bigint pk
+  title text unique 
+  author text
+  publish_year integer
+  price float  
+  left_in_stock integer  
+  book_image_src text 
+}
+
+table Orders{
+  id bigint pk
+  book_id bigint 
+  how_many integer  
+  time_of_order datetime
+  customer_fname text 
+  customer_lname text 
+  credit_card text  
+ 
+}
+REF: Orders.book_id > Books.id
